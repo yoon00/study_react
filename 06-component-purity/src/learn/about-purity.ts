@@ -15,8 +15,8 @@ function truncateText(text:string,limit:number = 100):string{
 }
 
 // 동일한 입력일 때, 출력 결과가 동일하다면, 이 함수는 순수하다. 
-console.log( truncateText('안녕 내 이름은 심선범이야!',5) );
-console.log( truncateText('안녕 내 이름은 심선범이야!',5) );
+console.log( truncateText('안녕 내 이름은 kim이야!',5) );
+console.log( truncateText('안녕 내 이름은 kim이야!',5) );
 
 
 function square(n:number):number{

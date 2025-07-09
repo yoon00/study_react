@@ -1,3 +1,4 @@
+import EventPropagation from "./EventPropagation"
 import NavContents from "./NavContents"
 import View from "./View"
 
@@ -9,6 +10,7 @@ function Learn() {
     <div className="Learn">
       <NavContents />
       <View.RespondingToEvents />
+      <EventPropagation />
     </div>
   )
 }

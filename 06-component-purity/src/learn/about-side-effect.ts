@@ -24,8 +24,8 @@ function greet(name:string):string{
   return `Hello ${name}!`
 }
 
-console.log( greet('정소영') );
-console.log( greet('정소영') );
+console.log( greet('kim') );
+console.log( greet('kim') );
 
 
 

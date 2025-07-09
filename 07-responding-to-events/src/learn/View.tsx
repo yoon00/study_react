@@ -1,4 +1,5 @@
 import { useState } from "react"
+import EventHandlerProp from "./EventHandlerProp";
 
 
 
@@ -18,6 +19,17 @@ function RespondingToEvents(){
 
   const style = {
     marginRight:'10px'
+  }
+
+  const handler = () => {
+    console.log('hi handler');
+  }
+
+  let message = ''
+
+  let updateMessage = (add:string):void => {
+    message += add;
+    console.log(message);
   }
 
   return (
@@ -47,6 +59,7 @@ function RespondingToEvents(){
       <div>
         <output>{text}</output>
       </div>
+      <EventHandlerProp onUpdateMessage={updateMessage}/>
     </div>
   )
 }
