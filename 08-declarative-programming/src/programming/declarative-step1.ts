@@ -20,6 +20,13 @@ const render = () => {
     console.log('checked 상태 업데이트!', state.checked);
 }
 
+declare global {
+    var update: (value:boolean) => void;
+}
+
+const update = (globalThis.update = (value) => {
+    setState('checked', value)
+})
 /* 
 state: 현재상태
 setState: 상태를 업데이트하고 render()를 실행시켜주는 함수
@@ -27,20 +34,23 @@ React의 const [count, setCount] = useState(0) 유사합니다.
  */
 const [state, setState] = createState(data, render);
 
-function update(){
-    const nextCheckedValue = !state.checked;
+// function update(){
+//     const nextCheckedValue = !state.checked;
 
-    setState('checked', nextCheckedValue);
-}
+//     setState('checked', nextCheckedValue);
+// }
 
-update();
+// update();
 
 // globalThis.update = update;
 
 const container = document.getElementById('declarative-programming')!;
-const checkbox = container?.querySelector('input[type="checkbox"]') as HTMLInputElement;
+console.log(container);
+
+const checkbox = container.querySelector('input[type="checkbox"]') as HTMLInputElement;
 const button = container.querySelector('button') as HTMLButtonElement;
 
-checkbox.addEventListener('change',(e:Event)=>{
-    
+checkbox.addEventListener('change',(e:Event) => {
+    const {checked} = e.target as HTMLInputElement;
+    update(checked);
 })
