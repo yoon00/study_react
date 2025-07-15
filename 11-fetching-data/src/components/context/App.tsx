@@ -1,11 +1,8 @@
-import { createContext, useState } from "react";
+import { useState } from "react";
 import Parent from "./Parent";
+import { UserContext } from "./UserContext";
 
-interface UserContextType {
-  username: string;
-}
 
-export const UserContext = createContext<UserContextType | null>(null);
 
 // props drilling
 function App() {
