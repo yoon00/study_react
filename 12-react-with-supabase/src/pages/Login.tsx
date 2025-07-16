@@ -36,9 +36,6 @@ function Login() {
     }
   }
 
-  useEffect(() => {
-  })
-
   return (
     <div className={S.container}>
       <div>
@@ -72,7 +69,11 @@ function Login() {
             error && <p style={{paddingTop:'1rem', color:'red'}}>{error}</p>
           }
           <hr />
-          <a href="">회원가입</a>
+          <a href="#" onClick={(e)=>{
+            e.preventDefault();
+            history.pushState(null, '', '/Register');
+            setHistoryRoute('/Register')
+          }}>회원가입</a>
         </form>
       </div>
     </div>
