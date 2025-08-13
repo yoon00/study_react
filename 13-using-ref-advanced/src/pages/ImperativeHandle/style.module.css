@@ -1,20 +1,29 @@
-.container {
-  flex: 1;
-  padding: 2rem;
 
-  h1 {
+
+
+.container{
+  flex:1;
+  padding:2rem;
+
+  h1{
     font-size: 2rem;
     font-weight: bold;
     margin-bottom: 2rem;
   }
 
-  .description {
+
+  .description{
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap:0.5rem;
     line-height: 1.4;
+    
   }
+
+
 }
+
+
 
 .chatBox {
   position: relative;

@@ -23,6 +23,8 @@ export type Chat = typeof INITIAL_CHAT_MESSAGE;
 function ImperativeHandle() {
 
   const [chatMessage, setChatMessage] = useState<Chat>(INITIAL_CHAT_MESSAGE);
+
+  // 하위 컴포넌트의 명령형 핸들에 접근 가능한 객체를 참조
   const imperativeHandleRef = useRef<ChatBoxHandle>(null);
 
   // [상태 업데이트] 채팅 메시지 목록에 새 메시지 추가 기능
@@ -35,7 +37,6 @@ function ImperativeHandle() {
       isMe:true,
       message
     }
-
     setChatMessage((message)=> [...message, newMessage])
   }
 
@@ -44,6 +45,7 @@ function ImperativeHandle() {
     if(!imperativeHandles) return;
     imperativeHandles.scrollDownList();
   }
+
 
   return (
     <main className={S.container} ref={mountedMainElement}>

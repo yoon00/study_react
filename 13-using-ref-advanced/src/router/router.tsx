@@ -1,6 +1,7 @@
 import AccessDom from "@/pages/AccessDom";
 import Home from "@/pages/Home/Home";
 import ImperativeHandle from "@/pages/ImperativeHandle";
+import MotionAnimation from "@/pages/MotionAnimation";
 import Remember from "@/pages/Remember";
 
 
@@ -19,7 +20,7 @@ export const routes = [
     element: <Remember />
   },
   {
-    title:'DOM 노드 접근 /조작',
+    title:'DOM 노드 접근 / 조작',
     path:'/access-dom',
     element: <AccessDom />
   },
@@ -27,6 +28,11 @@ export const routes = [
     title:'명령형 핸들 노출',
     path:'/imperativeHandle',
     element: <ImperativeHandle />
+  },
+  {
+    title:'모션 애니메이션',
+    path:'/motion-animation',
+    element: <MotionAnimation />
   },
 
 ]
