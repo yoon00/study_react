@@ -1,4 +1,4 @@
-// import { Helmet } from "react-helmet-async"
+// import { Helmet } from "@dr.pogodin/react-helmet"
 
 
 /* 
@@ -18,6 +18,7 @@ noreferrer
 
 
 import tw from "@/utils/tw";
+import { memo } from "react";
 
 interface Props {
   children: React.ReactNode;
@@ -31,8 +32,9 @@ function AppLink({children, href, isExternal, className, ...restProps}:Props) {
 
   const externalProps = isExternal ? { target:'_blank', rel:'noreferrer noopener'} : {};
 
+    
   return (
-    <a
+      <a
       href={href}
       className={tw('text-indigo-500 hover:text-accent',className)}
       {...externalProps}
@@ -42,4 +44,4 @@ function AppLink({children, href, isExternal, className, ...restProps}:Props) {
     </a>
   )
 }
-export default AppLink
+export default memo(AppLink, ()=> true)
